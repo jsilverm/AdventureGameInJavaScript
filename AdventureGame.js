@@ -168,6 +168,18 @@ function updateHealth( hpAmount ) {
 }
 
 /**
+ * Displays what you are carrying: weapon, potions armor
+
+ */
+function showInventory() {
+    console.log("You are currently carrying:");
+    if (!hasWeapon && !hasArmor && !hasPotion) console.log("Not a sausage!");
+    if (hasWeapon) console.log("I've got a shiny sword!");
+    if (hasArmor) console.log("I am wearing some armor, trusty and not rusty!");
+    if (hasPotion) console.log("I currently have a healing potion!");
+}
+
+/**
  * Handles Combat!! between you and a monster
  * @returns {boolean} True if you won
  */
@@ -247,7 +259,7 @@ while (gameRunning) {
                     showStatus();
                 }
                 else if (choiceNum === 5) {
-                    checkInventory();
+                    showInventory();
                 }
                 else if (choiceNum === 6) {
                     gameRunning = false;
@@ -270,7 +282,7 @@ while (gameRunning) {
                     showStatus();
                 }
                 else if (choiceNum === 3) {
-                    checkInventory();
+                    showInventory();
                 }
                 else if (choiceNum === 4) {
                     gameRunning = false;
